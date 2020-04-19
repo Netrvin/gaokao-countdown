@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>普通高等学校招生全国统一考试</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div style="height:100%;width:100%;position: fixed;z-index: 9999999;"></div>
+
+		<div style="position: absolute;right:4em">
+		<!-- Header -->
+			<header id="header">
+				<h1>普通高等学校招生全国统一考试</h1>
+				<p style="float: right;display:block">2020年7月7日-2020年7月8日（北京时间）</p>
+			</header>
+
+		<!-- Signup Form -->
+			<form style="float: right;" id="signup-form" method="post" action="#">
+				<p style="font-size: 3rem;color:white;line-height: 3rem;"><span id="djst"></span> 天 <span id="djss"></span> 时 <span id="djsf"></span> 分 <span id="djsm"></span> 秒</p>
+			</form>
+		</div>
+		
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>&copy; CEE.SOCIAL</li><li>Credits: <a href="#">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+			<script>
+				var djst=document.getElementById("djst");
+				var djss=document.getElementById("djss");
+				var djsf=document.getElementById("djsf");
+				var djsm=document.getElementById("djsm");
+				var cu=0;
+				function bu0(s){
+					if (s.length<2){
+						return "0"+s;
+					}else{
+						return s;
+					}
+				}
+				function run(){
+					cu=1594083600-Math.round(new Date() / 1000);
+                                        if (cu<0){cu=0;}
+					djsm.innerHTML=bu0((cu%60).toString());
+					djsf.innerHTML=bu0((Math.floor(cu/60)%60).toString());
+					djss.innerHTML=bu0((Math.floor(cu/3600)%24).toString());
+					djst.innerHTML=bu0((Math.floor(cu/86400)).toString());
+				}
+				run();
+				setInterval(function(){
+					run();
+				},1000);
+			</script>
+	</body>
+</html>

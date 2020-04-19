@@ -1,0 +1,22 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "如题，预设了三张图片，要调可以自己到目录里改js",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"tags" : [ "Unspecified" ],
+	"title" : "高考倒计时2020版",
+	"type" : "web"
+}
