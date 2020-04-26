@@ -1,6 +1,6 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "预设了三张图片，可以在JS里自行更改\n\n本次更新内容：缩短图片切换时间；字体文件离线至本地；将webp图片更换为jpg格式\n\nhttps://github.com/Netrvin/gaokao-countdown",
+	"description" : "预设了三张图片，可以在JS里自行更改\n\n本次更新内容：使壁纸能在以后的年份（如2021、2022……）中使用\n\n更换背景图方式：修改 Steam 安装目录下 steamapps\\workshop\\content\\431960\\2066950725\\images 目录中的图片，注意修改图片文件名为bg0x.jpg，或修改 steamapps\\workshop\\content\\431960\\2066950725\\assets\\js\\main.js 中的图片文件名\n\n开源：https://github.com/Netrvin/gaokao-countdown",
 	"file" : "index.html",
 	"general" : 
 	{

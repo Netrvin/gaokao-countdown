@@ -18,7 +18,7 @@
 		<!-- Header -->
 			<header id="header">
 				<h1>普通高等学校招生全国统一考试</h1>
-				<p style="float: right;display:block">2020年7月7日-2020年7月8日（北京时间）</p>
+				<p style="float: right;display:block"><span id="st_y"></span>年<span id="st_m"></span>月7日-<span id="ed_y"></span>年<span id="ed_m"></span>月8日（北京时间）</p>
 			</header>
 
 		<!-- Signup Form -->
@@ -42,6 +42,12 @@
 				var djss=document.getElementById("djss");
 				var djsf=document.getElementById("djsf");
 				var djsm=document.getElementById("djsm");
+				var st_y=document.getElementById("st_y");
+				var st_m=document.getElementById("st_m");
+				var ed_y=document.getElementById("ed_y");
+				var ed_m=document.getElementById("ed_m");
+				var GK_year=2020;
+				var GK_month=6;
 				var cu=0;
 				function bu0(s){
 					if (s.length<2){
@@ -51,8 +57,22 @@
 					}
 				}
 				function run(){
-					cu=1594083600-Math.round(new Date() / 1000);
-                                        if (cu<0){cu=0;}
+					var date=new Date();
+					if (Date.UTC(GK_year,GK_month,8,9,0,0,0)<Date.now()){
+						if (Date.UTC(date.getUTCFullYear(),5,8,9,0,0,0)>Date.now()){
+							GK_year=date.getUTCFullYear();
+							GK_month=5;
+						}else{
+							GK_year=date.getUTCFullYear()+1;
+							GK_month=5;
+						}
+					}
+					st_y.innerHTML=GK_year.toString();
+					ed_y.innerHTML=GK_year.toString();
+					st_m.innerHTML=(GK_month+1).toString();
+					ed_m.innerHTML=(GK_month+1).toString();
+					cu=Math.round((Date.UTC(GK_year,GK_month,7,1,0,0,0)-Date.now())/1000);
+                    if (cu<0){cu=0;}
 					djsm.innerHTML=bu0((cu%60).toString());
 					djsf.innerHTML=bu0((Math.floor(cu/60)%60).toString());
 					djss.innerHTML=bu0((Math.floor(cu/3600)%24).toString());
